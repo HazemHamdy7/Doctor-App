@@ -1,5 +1,5 @@
+import 'package:doctor_app/core/shared/get_started_button.dart';
 import 'package:doctor_app/core/theme/app_text_styles.dart';
-import 'package:doctor_app/core/widgets/get_started_button.dart';
 import 'package:doctor_app/features/onboarding/widgets/doctor_image_and_text.dart';
 import 'package:doctor_app/features/onboarding/widgets/doctor_logo_and_name.dart';
 import 'package:flutter/material.dart';
