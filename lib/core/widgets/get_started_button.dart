@@ -1,3 +1,5 @@
+import 'package:doctor_app/core/helper/extenstions.dart';
+import 'package:doctor_app/core/routing/router.dart';
 import 'package:doctor_app/core/theme/app_colors_manger.dart';
 import 'package:doctor_app/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +10,9 @@ class GetStartedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+        context.pushNamed(Routes.login);
+      },
       style: TextButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,

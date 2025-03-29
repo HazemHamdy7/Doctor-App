@@ -10,15 +10,7 @@ class LoginScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('Login Screen'),
-            ElevatedButton(
-              onPressed: () {
-                // Handle login action
-              },
-              child: const Text('Login'),
-            ),
-          ],
+          children: <Widget>[const Text('Login Screen')],
         ),
       ),
     );
