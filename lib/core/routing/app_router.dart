@@ -1,6 +1,6 @@
 import 'package:doctor_app/core/routing/router.dart';
 import 'package:doctor_app/features/onboarding/on_boarding_screen.dart';
-import 'package:doctor_app/features/login/ui/widget/login_screen.dart';
+import 'package:doctor_app/features/login/ui/screen/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -10,7 +10,7 @@ class AppRouter {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
       case Routes.login:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+        return MaterialPageRoute(builder: (_) =>   LoginScreen());
       default:
         return MaterialPageRoute(
           builder:
