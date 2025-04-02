@@ -19,7 +19,7 @@ class GetStartedButton extends StatelessWidget {
         minimumSize: Size(double.infinity, 52),
         backgroundColor: AppColorsManager.mainBlue,
       ),
-      child: Text('Get Started', style: AppTextStyles.font16WhiteSemibold),
+      child: Text('Get Started', style: AppTextStyles.font18WhiteMedium),
     );
   }
 }
