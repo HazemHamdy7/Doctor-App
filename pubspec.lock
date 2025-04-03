@@ -225,14 +225,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  equatable:
-    dependency: transitive
-    description:
-      name: equatable
-      sha256: "567c64b3cb4cf82397aac55f4f0cbd3ca20d77c6c03bedbc4ceaddc08904aef7"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.7"
   fake_async:
     dependency: transitive
     description:
@@ -265,14 +257,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.1"
-  fl_chart:
-    dependency: transitive
-    description:
-      name: fl_chart
-      sha256: "5276944c6ffc975ae796569a826c38a62d2abcf264e26b88fa6f482e107f4237"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.70.2"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -592,6 +576,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
+  protobuf:
+    dependency: transitive
+    description:
+      name: protobuf
+      sha256: "68645b24e0716782e58948f8467fd42a880f255096a821f9e7d0ec625b00c84d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.0"
   provider:
     dependency: transitive
     description:
@@ -616,14 +608,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.0"
-  retro_logger:
-    dependency: "direct main"
-    description:
-      name: retro_logger
-      sha256: dd72e3597b3ec9bc64c62e8ff18f0bb924f71df6794581c481cf695a7288a642
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.10"
   retrofit:
     dependency: "direct main"
     description:
@@ -632,6 +616,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.4.2"
+  retrofit_generator:
+    dependency: "direct main"
+    description:
+      name: retrofit_generator
+      sha256: "218c04c96b45c545a5de95bc91b05efdaa2d6ebe7894fe1f96b805536168afdf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "9.1.9"
   shelf:
     dependency: transitive
     description:
