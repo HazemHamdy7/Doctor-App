@@ -112,10 +112,10 @@ as T,
 
 
 class Failure<T> implements ApiResult<T> {
-  const Failure(this.message);
+  const Failure(this.errorHandler);
   
 
- final  String message;
+ final  ErrorHandler errorHandler;
 
 /// Create a copy of ApiResult
 /// with the given fields replaced by the non-null parameter values.
@@ -127,16 +127,16 @@ $FailureCopyWith<T, Failure<T>> get copyWith => _$FailureCopyWithImpl<T, Failure
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Failure<T>&&(identical(other.message, message) || other.message == message));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Failure<T>&&(identical(other.errorHandler, errorHandler) || other.errorHandler == errorHandler));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,message);
+int get hashCode => Object.hash(runtimeType,errorHandler);
 
 @override
 String toString() {
-  return 'ApiResult<$T>.failure(message: $message)';
+  return 'ApiResult<$T>.failure(errorHandler: $errorHandler)';
 }
 
 
@@ -147,7 +147,7 @@ abstract mixin class $FailureCopyWith<T,$Res> implements $ApiResultCopyWith<T, $
   factory $FailureCopyWith(Failure<T> value, $Res Function(Failure<T>) _then) = _$FailureCopyWithImpl;
 @useResult
 $Res call({
- String message
+ ErrorHandler errorHandler
 });
 
 
@@ -164,10 +164,10 @@ class _$FailureCopyWithImpl<T,$Res>
 
 /// Create a copy of ApiResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? errorHandler = null,}) {
   return _then(Failure<T>(
-null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
-as String,
+null == errorHandler ? _self.errorHandler : errorHandler // ignore: cast_nullable_to_non_nullable
+as ErrorHandler,
   ));
 }
 
