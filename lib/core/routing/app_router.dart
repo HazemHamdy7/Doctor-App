@@ -4,12 +4,14 @@ import 'package:doctor_app/features/home/ui/screen/home_screen.dart';
 import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor_app/features/onboarding/on_boarding_screen.dart';
 import 'package:doctor_app/features/login/ui/screen/login_screen.dart';
+import 'package:doctor_app/features/sing_up/logic/cubit/sing_up_cubit.dart';
+import 'package:doctor_app/features/sing_up/ui/screen/sing_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
-    // final args = settings.arguments;
+    final arguments = settings.arguments;
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
@@ -22,6 +24,14 @@ class AppRouter {
               ),
         );
 
+      case Routes.singUp:
+        return MaterialPageRoute(
+          builder:
+              (_) => BlocProvider(
+                create: (context) => getIt<SingUpCubit>(),
+                child: SignupScreen(),
+              ),
+        );
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
       default:
