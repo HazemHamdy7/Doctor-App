@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DoctorApp extends StatelessWidget {
-  const DoctorApp({super.key});
+  final AppRouter appRouter;
+  const DoctorApp({super.key, required this.appRouter});
 
   @override
   Widget build(BuildContext context) {

@@ -3,8 +3,8 @@ import 'package:doctor_app/core/theme/app_text_styles.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class CustomAlreadyHaveAccount extends StatelessWidget {
-  const CustomAlreadyHaveAccount({super.key});
+class CustomDoNotHaveAccount extends StatelessWidget {
+  const CustomDoNotHaveAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class CustomAlreadyHaveAccount extends StatelessWidget {
       textAlign: TextAlign.center,
       text: TextSpan(
         style: AppTextStyles.font13DarkBlueRegular,
-        text: 'Already have an account? ',
+        text: "Don't have an account? ",
         children: <TextSpan>[
           TextSpan(
             text: 'Sign In',
