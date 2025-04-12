@@ -1,26 +1,20 @@
 import 'package:doctor_app/core/helper/gap.dart';
-import 'package:doctor_app/core/theme/app_colors_manger.dart';
 import 'package:doctor_app/core/theme/app_text_styles.dart';
 import 'package:doctor_app/core/widgets/custom_button.dart';
-import 'package:doctor_app/core/widgets/custom_form_field.dart';
 import 'package:doctor_app/core/widgets/custom_text.dart';
+import 'package:doctor_app/features/login/data/model/login_request_body.dart';
+import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor_app/features/login/ui/widget/custom_do_not_have_account.dart';
 import 'package:doctor_app/features/login/ui/widget/custom_forget_password.dart';
 import 'package:doctor_app/features/login/ui/widget/custom_terms_and_conditions.dart';
+import 'package:doctor_app/features/login/ui/widget/email_and_password.dart';
+import 'package:doctor_app/features/login/ui/widget/login_bloc_listener.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  final _formKey = GlobalKey<FormState>();
-
-  bool isObscureText = true;
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,55 +39,27 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 gapH(36.h),
 
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      CustomFormField(
-                        validator: (p0) => null,
+                Column(
+                  children: [
+                    const EmailAndPassword(),
 
-                        hintText: 'Email',
-                        hintStyle: AppTextStyles.font14BlueSemiBold,
-                        keyboardType: TextInputType.emailAddress,
-                      ),
-                      gapH(20.h),
-                      CustomFormField(
-                        hintStyle: AppTextStyles.font14BlueSemiBold,
-                        validator: (p0) => null,
-                        hintText: 'Password',
-                        keyboardType: TextInputType.number,
-                        isObscureText: isObscureText,
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              isObscureText = !isObscureText;
-                            });
-                          },
-                          child:
-                              isObscureText
-                                  ? const Icon(Icons.visibility_off_outlined)
-                                  : const Icon(Icons.visibility_outlined),
-                        ),
-                      ),
-                      gapH(24.h),
+                    gapH(24.h),
 
-                      CustomForgetPassword(),
-                      gapH(24.h),
-                      CustomButton(
-                        buttonText: 'Login',
-                        textStyle: AppTextStyles.font16WhiteMedium,
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            // Perform login action
-                          }
-                        },
-                      ),
-                      gapH(50.h),
-                      CustomTermsAndConditions(),
-                      gapH(24.h),
-                      CustomDoNotHaveAccount(),
-                    ],
-                  ),
+                    CustomForgetPassword(),
+                    gapH(24.h),
+                    CustomButton(
+                      buttonText: 'Login',
+                      textStyle: AppTextStyles.font16WhiteMedium,
+                      onPressed: () {
+                        validateThenDoLogin(context);
+                      },
+                    ),
+                    gapH(50.h),
+                    CustomTermsAndConditions(),
+                    gapH(24.h),
+                    CustomDoNotHaveAccount(),
+                    const LoginBlocListener(),
+                  ],
                 ),
               ],
             ),
@@ -101,5 +67,16 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginState(
+        LoginRequestBody(
+          email: context.read<LoginCubit>().emailController.text,
+          password: context.read<LoginCubit>().passwordController.text,
+        ),
+      );
+    }
   }
 }

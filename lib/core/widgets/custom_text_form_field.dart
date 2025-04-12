@@ -3,7 +3,7 @@ import 'package:doctor_app/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomFormField extends StatelessWidget {
+class CustomTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
@@ -16,7 +16,7 @@ class CustomFormField extends StatelessWidget {
   final TextEditingController? controller;
   final Function(String?) validator;
   final TextInputType? keyboardType;
-  const CustomFormField({
+  const CustomTextFormField({
     super.key,
     this.contentPadding,
     this.focusedBorder,
