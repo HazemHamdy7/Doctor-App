@@ -4,10 +4,9 @@ import 'package:doctor_app/core/theme/app_text_styles.dart';
 import 'package:doctor_app/core/widgets/custom_button.dart';
 import 'package:doctor_app/core/widgets/custom_form_field.dart';
 import 'package:doctor_app/core/widgets/custom_text.dart';
-import 'package:doctor_app/features/login/ui/widget/custom_already_have_account.dart';
+import 'package:doctor_app/features/login/ui/widget/custom_do_not_have_account.dart';
 import 'package:doctor_app/features/login/ui/widget/custom_forget_password.dart';
-import 'package:doctor_app/features/login/ui/widget/custom_terms_and_conditions.dart'
-    show CustomTermsAndConditions;
+import 'package:doctor_app/features/login/ui/widget/custom_terms_and_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -92,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       gapH(50.h),
                       CustomTermsAndConditions(),
                       gapH(24.h),
-                      CustomAlreadyHaveAccount(),
+                      CustomDoNotHaveAccount(),
                     ],
                   ),
                 ),
