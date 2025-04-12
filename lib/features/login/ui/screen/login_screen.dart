@@ -2,7 +2,6 @@ import 'package:doctor_app/core/helper/gap.dart';
 import 'package:doctor_app/core/theme/app_text_styles.dart';
 import 'package:doctor_app/core/widgets/custom_button.dart';
 import 'package:doctor_app/core/widgets/custom_text.dart';
-import 'package:doctor_app/features/login/data/model/login_request_body.dart';
 import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor_app/features/login/ui/widget/custom_do_not_have_account.dart';
 import 'package:doctor_app/features/login/ui/widget/custom_forget_password.dart';
